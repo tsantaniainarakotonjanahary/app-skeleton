@@ -1,12 +1,11 @@
 import React from 'react'
-import { Header } from '..'
+import { Header, Main } from '..'
+import 'typeface-roboto'
+import './style.css'
 
-export const App = () => (
+export const App = ({ baseUrl, appName, apiVersion }) => (
     <>
-        <Header/>
-        <p>Hello world!</p>
+        <Header baseUrl={baseUrl} appName={appName} apiVersion={apiVersion} />
+        <Main />
     </>
 )
-
-
-

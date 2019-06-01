@@ -1,11 +1,29 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { App } from './components'
 import * as serviceWorker from './serviceWorker'
+import { App } from './components'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+const appName = 'App Name'
+const developmentServer = 'https://play.dhis2.org/2.32.0'
+const apiVersion = 32
+const rootElement = document.getElementById('root')
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister()
+const withBaseUrl = baseUrl => {
+    ReactDOM.render(
+        <App appName={appName} baseUrl={baseUrl} apiVersion={apiVersion} />,
+        rootElement
+    )
+    serviceWorker.unregister()
+}
+
+if (process.env.NODE_ENV === 'production') {
+    fetch('./manifest.webapp')
+        .then(response => response.json())
+        .then(manifest => {
+            withBaseUrl(`${manifest.activities.dhis.href}`)
+        })
+        .catch(e => {
+            console.error('Could not read manifest:', e)
+            ReactDOM.render(<code>No manifest found</code>, rootElement)
+        })
+} else withBaseUrl(developmentServer)

@@ -1,34 +1,45 @@
 {
-  "name": "app-base",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@dhis2/app-runtime": "^1.2.0",
-    "@dhis2/ui-core": "^2.4.3",
-    "@dhis2/ui-widgets": "^1.0.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "app-base",
+    "description": "Skeleton for DHIS2 apps.",
+    "homepage": ".",
+    "version": "0.1.0",
+    "private": true,
+    "developer": {
+        "name": "Terje Uglebakken",
+        "email": "terjeug@ifi.uio.no",
+        "url": "https://dhis2designlab.github.io/"
+    },
+    "license": "MIT",
+    "icons": {
+        "48": "favicon-48x48.png"
+    },
+    "manifest.webapp": {
+        "name": "App Name",
+        "description": "Do something cool.",
+        "activities": {
+            "dhis": {
+                "href": "*"
+            }
+        }
+    },
+    "dependencies": {
+        "@dhis2/app-runtime": "^1.2.0",
+        "@dhis2/ui-core": "^2.5.1",
+        "@dhis2/ui-widgets": "^1.0.3",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "typeface-roboto": "^0.0.54"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "prebuild": "rm -rf build",
+        "build": "react-scripts build && d2-manifest package.json build/manifest.webapp",
+        "postbuild": "rm -f ou-code.zip && cd build && zip -r -X ../ou-code.zip .",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "d2-manifest": "^1.0.0",
+        "react-scripts": "3.0.1"
+    }
 }
