@@ -1,5 +1,5 @@
-# DHIS2 app example
-This example DHIS2 app allows you to change an organisation unit's code.
+# DHIS2 app base
+Contains a skeleton for DHIS2 web-apps. 
 
 ## Install
 ```bash
