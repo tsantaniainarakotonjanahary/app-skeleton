@@ -1,6 +1,6 @@
 {
     "name": "app-skeleton",
-    "description": "This repository can be used as a foundation to create DHIS2 dashboard apps.",
+    "description": "This repository can be used as a foundation to create DHIS2 apps.",
     "homepage": ".",
     "version": "0.1.0",
     "private": true,
