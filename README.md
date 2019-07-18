@@ -1,5 +1,5 @@
 # DHIS2 app base
-Contains a skeleton for DHIS2 web-apps. 
+This repository can be used as a foundation to create DHIS2 apps. 
 
 ## Install
 ```bash
