@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
-import { App } from './components'
+import { App } from './components/App'
 
 const appName = 'App Name'
-const developmentServer = 'https://play.dhis2.org/2.32.0'
+const developmentServer = 'https://play.dhis2.org/2.32.1'
 const apiVersion = 32
 const rootElement = document.getElementById('root')
 
