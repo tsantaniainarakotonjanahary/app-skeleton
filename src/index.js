@@ -6,7 +6,8 @@ import { App } from './components/App'
 /**
  * This is what is displayed in the header bar
  */
-const appName = 'App Name'
+//const appName = 'App Name'
+const appName = 'Testapp'
 
 /**
  * Passed to DataProvider to get various data for the header bar.
