@@ -1,14 +1,20 @@
 import React from 'react'
 import { CssReset } from '@dhis2/ui-core'
-import { Header } from '../Header'
+import { DataProvider } from '@dhis2/app-runtime'
+import { HeaderBar } from '@dhis2/ui-widgets'
 import { Main } from '../Main'
 import 'typeface-roboto'
 import './style.css'
 
-export const App = ({ baseUrl, appName, apiVersion }) => (
+const baseUrl = process.env.REACT_APP_DHIS2_BASE_URL
+const apiVersion = process.env.REACT_APP_DHIS2_API_VERSION
+
+export const App = ({ appName }) => (
     <>
         <CssReset />
-        <Header baseUrl={baseUrl} appName={appName} apiVersion={apiVersion} />
-        <Main />
+        <DataProvider baseUrl={baseUrl} apiVersion={apiVersion}>
+            <HeaderBar appName={appName} className="headerbar" />
+            <Main />
+        </DataProvider>
     </>
 )
