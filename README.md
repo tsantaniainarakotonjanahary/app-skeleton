@@ -1,4 +1,4 @@
-# DHIS2 app base
+# DHIS2 app skeleton
 This repository can be used as a foundation to create DHIS2 apps. 
 
 ## Install
@@ -9,6 +9,7 @@ yarn install
 ```
 
 ## Develop
+You need to log in to whatever `REACT_APP_DHIS2_BASE_URL` is set to in [.env.development](./.env.development).
 ```bash
 npm start
 # or
