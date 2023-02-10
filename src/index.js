@@ -1,15 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as serviceWorker from './serviceWorker'
-import { App } from './components/App'
-
-/**
- * This is what is displayed in the header bar
- */
-const appName = 'Covax Data-Quality'
 
 const rootElement = document.getElementById('root')
 
-ReactDOM.render(<App appName={appName} />, rootElement)
+ReactDOM.render(<h1>Helloe</h1>, rootElement)
 
-serviceWorker.unregister()

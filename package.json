@@ -1,51 +1,63 @@
 {
-    "name": "app-skeleton",
-    "description": "This repository can be used as a foundation to create DHIS2 apps.",
-    "homepage": ".",
-    "version": "0.1.0",
-    "private": true,
-    "developer": {
-        "name": "Terje Uglebakken",
-        "email": "terjeug@ifi.uio.no",
-        "url": "https://dhis2designlab.github.io/"
-    },
-    "license": "MIT",
-    "icons": {
-        "16": "favicon-16x16.png",
-        "32": "favicon-32x32.png",
-        "48": "favicon-48x48.png"
-    },
-    "manifest.webapp": {
-        "name": "app-name",
-        "description": "Do something cool.",
-        "appType": "APP",
-        "activities": {
-            "dhis": {
-                "href": "*"
-            }
-        }
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "prebuild": "rimraf build",
-        "build": "react-scripts build && d2-manifest package.json build/manifest.webapp",
-        "postbuild": "rimraf app-name.zip && cd build && bestzip ../app-name.zip *",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "dependencies": {
-        "@dhis2/app-runtime": "^2.0.1",
-        "@dhis2/ui-core": "^3.11.0",
-        "@dhis2/ui-widgets": "^1.0.8",
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0",
-        "typeface-roboto": "^0.0.75"
-    },
-    "devDependencies": {
-        "@dhis2/cli-style": "^4.1.1",
-        "bestzip": "^2.1.4",
-        "d2-manifest": "^1.0.0",
-        "react-scripts": "^3.1.2",
-        "rimraf": "^3.0.0"
+  "name": "app-skeleton",
+  "description": "This repository can be used as a foundation to create DHIS2 apps.",
+  "homepage": ".",
+  "version": "0.1.0",
+  "private": true,
+  "developer": {
+    "name": "Terje Uglebakken",
+    "email": "terjeug@ifi.uio.no",
+    "url": "https://dhis2designlab.github.io/"
+  },
+  "license": "MIT",
+  "icons": {
+    "16": "favicon-16x16.png",
+    "32": "favicon-32x32.png",
+    "48": "favicon-48x48.png"
+  },
+  "manifest.webapp": {
+    "name": "app-name",
+    "description": "Do something cool.",
+    "appType": "APP",
+    "activities": {
+      "dhis": {
+        "href": "*"
+      }
     }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "prebuild": "rimraf build",
+    "build": "react-scripts build && d2-manifest package.json build/manifest.webapp",
+    "postbuild": "rimraf app-name.zip && cd build && bestzip ../dqt.zip *",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@dhis2/app-runtime": "^2.0.1",
+    "@dhis2/ui-core": "^3.11.0",
+    "@dhis2/ui-widgets": "^1.0.8",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "typeface-roboto": "^0.0.75"
+  },
+  "devDependencies": {
+    "@dhis2/cli-style": "^4.1.1",
+    "bestzip": "^2.1.4",
+    "d2-manifest": "^1.0.0",
+    "react-scripts": "^3.1.2",
+    "rimraf": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
